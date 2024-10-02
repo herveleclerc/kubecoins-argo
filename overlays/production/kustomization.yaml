@@ -12,6 +12,7 @@ resources:
 
 patches:
 - path: replica-count.yaml
+- path: replica-count-worker.yaml
 - path: resource-limits.yaml
 
 - target:

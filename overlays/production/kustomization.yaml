@@ -1,0 +1,26 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+
+labels:
+- includeSelectors: true
+  pairs:
+    environment: prod
+
+resources:
+- ../../base
+
+patches:
+- path: replica-count.yaml
+- path: resource-limits.yaml
+
+- target:
+    kind: Ingress
+    name: kubecoins
+  path: patch-ingress.json
+
+
+images:
+- name: dockercoins/worker:v0.1
+  newName: dockercoins/worker
+  newTag: v0.2

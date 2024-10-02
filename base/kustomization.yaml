@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+
+  
+resources:
+- deployments/rng-deployment.yaml
+- deployments/hasher-deployment.yaml
+- deployments/webui-deployment.yaml
+- deployments/redis-deployment.yaml
+- deployments/worker-deployment.yaml
+- services/rng-service.yaml
+- services/hasher-service.yaml
+- services/webui-service.yaml
+- services/redis-service.yaml
+- ing.yaml
+
+labels:
+- includeSelectors: true
+  pairs:
+    project: dockercoins

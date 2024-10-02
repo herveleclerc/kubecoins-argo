@@ -1,0 +1,18 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/rules/0/host",
+    "value": "kubecoins-prod-herveleclerc.apps.caas.fr"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/tls/0/hosts/0",
+    "value": "kubecoins-prod-herveleclerc.apps.caas.fr"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/tls/0/secretName",
+    "value": "kubecoins-prod-herveleclerc.apps.caas.fr-tls"
+  }
+
+]

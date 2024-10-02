@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: le
+  name: kubecoins
+  namespace: kubecoins
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: fqdn.tld
+    http:
+      paths:
+      - backend:
+          service:
+            name: webui
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - fqdn.tld
+    secretName: fqdn.tld-tls

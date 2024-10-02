@@ -4,7 +4,6 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: le
   name: kubecoins
-  namespace: kubecoins
 spec:
   ingressClassName: nginx
   rules:
